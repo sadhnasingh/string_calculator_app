@@ -1,15 +1,15 @@
 class StringCalculator
   def add(numbers)
-    return 0 if numbers.nil? || numbers == ''
+    return 0 if numbers.nil? || numbers == ""
     return numbers.to_i if numbers =~ /\A-?\d+\z/
-    
-    str = numbers.dup
-    delimiters = [',', "\n"]
 
-    if str.start_with?('//')
+    str = numbers.dup
+    delimiters = [",", "\n"]
+
+    if str.start_with?("//")
       header, str = str.split("\n", 2)
       custom = header[2..-1]
-      if custom.start_with?('[')
+      if custom.start_with?("[")
         delimiters += custom.scan(/\[(.+?)\]/).flatten
       else
         delimiters << custom
@@ -21,7 +21,9 @@ class StringCalculator
     ints = tokens.map(&:to_i)
 
     negatives = ints.select { |n| n < 0 }
-    raise ArgumentError, "Negatives not allowed: #{negatives.join(',')}" unless negatives.empty?
+    unless negatives.empty?
+      raise ArgumentError, "Negatives not allowed: #{negatives.join(",")}"
+    end
 
     ints.reject { |n| n > 1000 }.sum
   end

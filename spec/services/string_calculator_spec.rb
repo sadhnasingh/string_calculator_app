@@ -29,6 +29,5 @@ RSpec.describe StringCalculator, type: :service do
     it 'raises when negatives are present and lists them' do
       expect { StringCalculator.new.add("1,-2,-5") }.to raise_error(ArgumentError, "Negatives not allowed: -2,-5")
     end
-
   end
 end
