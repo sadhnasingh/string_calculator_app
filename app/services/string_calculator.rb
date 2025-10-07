@@ -4,7 +4,7 @@ class StringCalculator
     return numbers.to_i if numbers =~ /\A-?\d+\z/
 
     str = numbers.dup
-    delimiters = [",", "\n"]
+    delimiters = [ ",", "\n" ]
 
     if str.start_with?("//")
       header, str = str.split("\n", 2)
