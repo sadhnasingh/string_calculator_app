@@ -1,24 +1,17 @@
-# README
+# String Calculator — Rails + RSpec (TDD Kata)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Run tests
+bundle install
+bundle exec rspec
 
-Things you may want to cover:
+## Implemented features
+- empty string => 0
+- single number => that number
+- any amount of comma-separated numbers
+- newline delimiter
+- custom delimiters (single / multi / multiple)
+- negative numbers raise with all negatives listed
+- ignore numbers greater than 1000
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## TDD evidence
+See commit history: `git --oneline`.
